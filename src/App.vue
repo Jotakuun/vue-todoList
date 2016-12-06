@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    
   </div>
+  <h2>asdas</h2>
 </template>
 
 <script>
