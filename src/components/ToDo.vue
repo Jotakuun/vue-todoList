@@ -1,23 +1,8 @@
 <template>
-  <h2>asadfs</h2>
+  <h2>test</h2>
 </template>
 
-<style lang="sass" scoped>
-    h1, h2 {
-    font-weight: normal;
-    }
-
-    ul {
-    list-style-type: none;
-    padding: 0;
-    }
-
-    li {
-    display: inline-block;
-    margin: 0 10px;
-    }
-
-    a {
-    color: #42b983;
-    }
+<style lang="sass">
+    
 </style>
+

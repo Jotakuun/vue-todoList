@@ -66,7 +66,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        loaders: [ 'vue-style', 'css', 'sass' ]
       }
     ]
   },
@@ -75,8 +75,7 @@ module.exports = {
     postcss: [
       require('autoprefixer')({
         browsers: ['last 2 versions']
-      }),
-      require("./file.scss")
+      })
     ]
   }
 }
