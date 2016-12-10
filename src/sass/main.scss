@@ -1,0 +1,14 @@
+@import "./global.scss";
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  margin-top: 60px;
+  width: 350px;
+  background: $main-color;
+  height: 500px;
+  margin: 60px auto;
+  border-radius: 5px;
+  @include box-shadow(0px, 2px, 8px, #4D4D4D);
+}

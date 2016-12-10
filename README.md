@@ -1,5 +1,5 @@
-# vue-todoList
-To do list using Vue 2. In development. 
+# vue-todoList - In development
+This takes part of my daily learning practices with Vue.js
 
 ## Build Setup
 

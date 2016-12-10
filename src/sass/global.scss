@@ -1,1 +1,13 @@
-    
+$back-color: #FEE37D;
+$main-color: #1BB0F4;
+$darkest-main-color: #1A8ED1;
+
+@mixin box-shadow($top, $left, $blur, $color) {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+}
+
+body{
+    background: $back-color;
+}
