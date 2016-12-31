@@ -2,7 +2,9 @@
   <div>
     <h2>This is the list of task</h2>
     <new-task></new-task>
-    <task></task>
+    <div v-for="task in tasks">
+      <task :task="task"></task>
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,15 @@ export default {
   components: {
     'task' : task,
     'new-task' : newTask
+  },
+  data: function (){
+    return {
+      newtask: '',
+      tasks: [
+        {title: 'Learn Javascript', complete: false},
+        {title: 'Do something else', complete: false}
+      ]
+    }
   }
 }
 </script>

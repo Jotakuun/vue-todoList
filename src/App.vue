@@ -2,7 +2,6 @@
   <div id="app">
     <todo> 
     </todo>
-    <task></task>
   </div>
 </template>
 

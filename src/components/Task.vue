@@ -3,10 +3,15 @@
 
 <template>
   <div>
-    <h2>This is a task</h2>
-
+    <h3>{{task.title}}</h3>
   </div>
 </template>
 
 <script>
+export default {
+  name: 'task-element',
+  props:[
+    'task'
+  ]
+}
 </script>
