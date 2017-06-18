@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>This is the list of task</h2>
-    <new-task v-model="newtask" v-on:addtask="createNewTask()"></new-task>
+    <new-task></new-task>
     <div v-for="task in tasks">
       <task :task="task"></task>
     </div>
@@ -10,6 +10,7 @@
 
 
 <style lang="sass">
+    
 </style>
 
 <script>
@@ -22,19 +23,13 @@ export default {
     'task' : task,
     'new-task' : newTask
   },
-  data: function() {
+  data: function (){
     return {
       newtask: '',
       tasks: [
         {title: 'Learn Javascript', complete: false},
         {title: 'Do something else', complete: false}
       ]
-    }
-  },
-  methods: {
-    createNewTask: function() {
-      this.tasks.push({title: this.newtask, complete: false});
-      this.newtask = '';      
     }
   }
 }
