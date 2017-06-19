@@ -1,5 +1,6 @@
-$back-color: #cee4ef;
-$main-color: #1BB0F4;
+$back-color: #1BB0F4;
+$secondary-back-color: #fff;
+$main-color: #fff;
 $darkest-main-color: #1A8ED1;
 
 @mixin box-shadow($top, $left, $blur, $color) {
@@ -11,3 +12,4 @@ $darkest-main-color: #1A8ED1;
 body{
     background: $back-color;
 }
+

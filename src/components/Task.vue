@@ -1,17 +1,17 @@
-<style lang="sass">
-</style>
-
 <template>
-  <div>
-    <h3>{{task.title}}</h3>
-  </div>
+  <li class="Task">
+    <input type="checkbox" class="Task__Checkbox"></input>
+    <label class="Task__Label">{{task.title}}</label>
+    <icon name="remove_circle" class="Task__RemoveIcon" :scale="100"></icon>
+  </li>
 </template>
 
 <script>
 export default {
   name: 'task-element',
-  props:[
-    'task'
-  ]
+  props:['task'],
 }
 </script>
+
+<style>
+</style>

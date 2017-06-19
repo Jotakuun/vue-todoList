@@ -1,16 +1,11 @@
 <template>
-  <div>
-    <h2>This is the list of task</h2>
+  <div class="ToDo">
     <new-task v-model="newtask" v-on:addtask="createNewTask()"></new-task>
-    <div v-for="task in tasks">
+    <ul v-for="task in tasks">
       <task :task="task"></task>
-    </div>
+    </ul>
   </div>
 </template>
-
-
-<style lang="sass">
-</style>
 
 <script>
 import task from './Task.vue'
@@ -26,16 +21,19 @@ export default {
     return {
       newtask: '',
       tasks: [
-        {title: 'Learn Javascript', complete: false},
-        {title: 'Do something else', complete: false}
+        {title: 'Learn Javascript', complete: false, editing: false},
+        {title: 'Do something else', complete: false, editing: false}
       ]
     }
   },
   methods: {
     createNewTask: function() {
-      this.tasks.push({title: this.newtask, complete: false});
+      this.tasks.unshift({title: this.newtask, complete: false, editing: false});
       this.newtask = '';      
     }
   }
 }
 </script>
+
+<style lang="sass">
+</style>
