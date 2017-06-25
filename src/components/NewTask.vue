@@ -32,5 +32,6 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss" scoped>
+@import "../sass/components/newtask.scss";
 </style>

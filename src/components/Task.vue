@@ -1,7 +1,13 @@
 <template>
   <li class="Task">
     <input :id="'Task'+index" type="checkbox" class="Task__Checkbox" checked></input>
-    <label :for="'Task'+index" class="Task__Label">{{task.title}}</label>
+    <label :for="'Task'+index" class="Task__Label">
+      <svg width="20px" height="20px" viewBox="0 0 20 20">
+      <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+      <polyline points="4 11 8 15 16 6"></polyline>
+    </svg>
+    </label>
+    <span>{{task.title}}</span>
     <icon name="remove_circle" class="Task__RemoveIcon" :scale="100"></icon>
   </li>
 </template>
@@ -17,39 +23,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.Task {
-  position: relative;
-  width: 100%;
-  padding: 10px;
-}
-
-.Task:hover .Task__RemoveIcon {
-  opacity: 1;
-  transition: all .2s ease;
-}
-
-.Task__Checkbox {
-  opacity: 0;
-  &:checked {
-    +.Task__Label:before {
-      border-color: blue;
-    }
-  }
-}
-
-.Task__Label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #333333;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.Task__RemoveIcon {
-  opacity: 0;
-  transition: all .2 ease;
-}
+@import "../sass/components/task.scss";
 </style>

@@ -1,16 +1,42 @@
 @import "./variables.scss";
 @import "./reset.scss";
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body {
+    background: #ec6f66; 
+    background: -webkit-linear-gradient(to right, #f3a183, #ec6f66);  
+    background: linear-gradient(to right, #f3a183, #ec6f66); 
+}
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
-  width: 350px;
-  background: $main-color;
-  height: 500px;
-  margin: 60px auto;
-  border-radius: 5px;
-  @include box-shadow(0px, 2px, 8px, #969696);
+    @include box-shadow(0px, 2px, 12px, #2d2d2d);
+    position: relative;
+    width: 350px;
+    height: 500px;
+    padding-top: 30px;
+    margin: 60px auto;
+    margin-top: 60px;
+    font-family: 'Varela Round', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    background: #1bb0f4;
+    border-radius: 5px;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        display: block;
+        width: 80%;
+        height: 90%;
+        margin-left: 10%;
+        background: #55c7f7;
+        border-radius: 5px;
+        content: '';
+    }
+
 }

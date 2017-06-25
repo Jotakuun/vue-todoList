@@ -21,8 +21,8 @@ export default {
     return {
       newtask: '',
       tasks: [
-        {title: 'Learn Javascript', complete: false, editing: false},
-        {title: 'Do something else', complete: false, editing: false}
+        { title: 'Learn Javascript', complete: false, editing: false },
+        { title: 'Do something else', complete: false, editing: false }
       ]
     }
   },
@@ -35,5 +35,6 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss" scoped>
+@import "../sass/components/todo.scss";
 </style>
