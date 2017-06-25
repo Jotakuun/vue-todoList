@@ -65,13 +65,15 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        loaders: [ 'vue-style', 'css', 'sass' ]
+          test: /\.s[a|c]ss$/,
+          loader: 'style!css!sass'
       }
     ]
   },
   vue: {
-    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
+    loaders: {
+      scss: 'style!css!sass'
+    },
     postcss: [
       require('autoprefixer')({
         browsers: ['last 2 versions']

@@ -1,8 +1,8 @@
 <template>
   <div class="ToDo">
     <new-task v-model="newtask" v-on:addtask="createNewTask()"></new-task>
-    <ul v-for="task in tasks">
-      <task :task="task"></task>
+    <ul>
+      <task v-for="(task, index) in tasks" :task="task" :index="index"></task>
     </ul>
   </div>
 </template>
