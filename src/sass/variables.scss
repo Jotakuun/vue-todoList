@@ -6,3 +6,10 @@ $darkest-main-color: #1a8ed1;
 @mixin box-shadow($top, $left, $blur, $color) {
     box-shadow: $top $left $blur $color;
 }
+
+@mixin font() {
+    font-family: 'Varela Round', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}

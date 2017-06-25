@@ -1,0 +1,37 @@
+@import "../variables.scss";
+.NewTask {
+    position: absolute;
+    top: -40px;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    padding: 5px 0;  
+    background: #fff;
+    border-radius: 3px;
+    transition: all .1s ease-in-out;  
+    &__Input {
+        @include font();
+        flex: 1;
+        padding: 10px 10px;
+        font-size: 16px;
+        background: transparent;
+        border: none;
+
+    }
+    &__Label {
+        top: 0;
+        right: 0;
+        width: 100px;
+        margin-top: 10px;
+    }
+    &--Focus {
+        width: 110%;
+        margin-left: -5%;
+        transform: translateY(-35px);
+        transition: all .3s ease;
+        
+        + .NewTask__Input {
+            background: blue;
+        }
+    }
+}

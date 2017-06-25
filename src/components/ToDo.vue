@@ -1,6 +1,6 @@
 <template>
-  <div class="ToDo">
-    <new-task v-model="newtask" v-on:addtask="createNewTask()"></new-task>
+  <div class="ToDo" v-bind:class="{'ToDo--Focus': newtaskfocus}">
+    <new-task v-model="newtask" v-on:addtask="createNewTask()" v-on:focus="newtaskfocus = $event"></new-task>
     <ul>
       <task v-for="(task, index) in tasks" :task="task" :index="index"></task>
     </ul>
@@ -20,6 +20,7 @@ export default {
   data: function() {
     return {
       newtask: '',
+      newtaskfocus: false,
       tasks: [
         { title: 'Learn Javascript', complete: false, editing: false },
         { title: 'Do something else', complete: false, editing: false }

@@ -9,6 +9,7 @@ body {
 }
 
 #app {
+    @include font();
     @include box-shadow(0px, 2px, 12px, #2d2d2d);
     position: relative;
     width: 350px;
@@ -16,27 +17,41 @@ body {
     padding-top: 30px;
     margin: 60px auto;
     margin-top: 60px;
-    font-family: 'Varela Round', Helvetica, Arial, sans-serif;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
     text-align: center;
     background: #1bb0f4;
     border-radius: 5px;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        display: block;
+        width: 70%;
+        height: 91%;
+        margin-top: 38px;
+        margin-left: 15%;
+        background: #fff;
+        border-radius: 5px;
+        content: '';
+        opacity: 0.1;
+    }
 
     &:after {
         position: absolute;
         top: 0;
         z-index: 1;
         display: block;
-        width: 80%;
-        height: 90%;
-        margin-left: 10%;
+        width: 75%;
+        height: 80%;
+        margin-top: 50px;
+        margin-left: 12%;
         background: #55c7f7;
         border-radius: 5px;
         content: '';
     }
 
 }
+
