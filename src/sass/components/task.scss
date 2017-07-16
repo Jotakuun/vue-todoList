@@ -1,66 +1,75 @@
 .Task {
     position: relative;
     z-index: 3;
-    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     padding: 10px;
-}
+    &__Check {
+        width: 30px;
+    }
+    &:hover {
+        .Task__RemoveIcon {
+            opacity: 1;
+            transition: all .2s ease;
+        }
+    }
+    span {
+        margin-top: 4px;
+    }
 
-.Task:hover .Task__RemoveIcon {
-    opacity: 1;
-    transition: all .2s ease;
-}
-
-.Task__Checkbox {
-    opacity: 0;
-    &:checked {
-        +.Task__Label {
-            svg {
-                path {
-                    fill: #20c2e0;
-                }
-                polyline {
-                    stroke-dashoffset: 0;
+    &__Checkbox {
+        display: none;
+        opacity: 0;
+        &:checked {
+            +.Task__Label {
+                svg {
+                    path {
+                        fill: #20c2e0;
+                    }
+                    polyline {
+                        stroke-dashoffset: 0;
+                    }
                 }
             }
         }
     }
-}
+    &__RemoveIcon {
+        opacity: 0;
+        transition: all .2 ease;
+    }
+    &__Label {
+        position: relative;
+        margin-right: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 100%;
+        user-select: none;
 
-.Task__RemoveIcon {
-    opacity: 0;
-    transition: all .2 ease;
-}
-.Task__Label {
-    position: relative;
-    margin-right: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 100%;
-    user-select: none;
+        svg {
+            width: 20px;
 
-    svg {
-        width: 20px;
+            path {
+                transition: all .6s ease;
+                fill: none;
+                stroke: #20c2e0;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 71px;
+                stroke-dashoffset: 0;
+            }
 
-        path {
-            transition: all .6s ease;
-            fill: none;
-            stroke: #20c2e0;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dasharray: 71px;
-            stroke-dashoffset: 0;
-        }
-
-        polyline {
-            transition: all .3s ease;
-            fill: none;
-            stroke: #fff;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dasharray: 18px;
-            stroke-dashoffset: 18px;
+            polyline {
+                transition: all .3s ease;
+                fill: none;
+                stroke: #fff;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 18px;
+                stroke-dashoffset: 18px;
+            }
         }
     }
 }
