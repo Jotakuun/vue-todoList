@@ -1,7 +1,7 @@
 <template>
-  <div class="ToDo" v-bind:class="{'ToDo--Focus': newtaskfocus}">
+  <div class="ToDo">
     <new-task v-model="newtask" v-on:addtask="createNewTask()" v-on:focus="newtaskfocus = $event"></new-task>
-    <ul>
+    <ul class="List" v-bind:class="{'List--Focus': newtaskfocus}">
       <task v-for="(task, index) in tasks" :task="task" :index="index"></task>
     </ul>
   </div>

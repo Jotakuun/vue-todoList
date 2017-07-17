@@ -22,16 +22,32 @@
         top: 0;
         right: 0;
         width: 100px;
-        margin-top: 10px;
+        margin-top: 14px;
+        color: #e3e3e3;
     }
     &--Focus {
-        width: 110%;
-        margin-left: -5%;
-        transform: translateY(-35px);
+        width: 105%;
+        margin-left: -2.5%;
+        transform: translateY(10px);
         transition: all .3s ease;
         
         + .NewTask__Input {
             background: blue;
         }
+    }
+    &--Adding {
+        z-index: 100;
+        padding: 0;
+        border-radius: 0;
+        opacity: 0.5;
+        transform: translateY(70px);
+        input {
+            width: 100%;
+            transition: all .3s ease;
+        }
+        .NewTask__Label {
+            display: none;
+        }
+        transition: all .3s ease;
     }
 }

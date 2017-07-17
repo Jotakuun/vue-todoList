@@ -1,8 +1,8 @@
 <template>
-  <div class="NewTask" v-bind:class="{'NewTask--Focus': isFocus}">
-    <input type="text" id="NewTask" name="NewTask" class="NewTask__Input" placeholder="What's next...'"
+  <div class="NewTask" v-bind:class="{'NewTask--Focus': isFocus, 'NewTask--Adding': isAdding}">
+    <input type="text" id="NewTask" name="NewTask" class="NewTask__Input" placeholder="What's next..."
     v-bind:value="value"
-    v-on:keyup.enter="addTask"
+    v-on:keyup.enter="emitAdd"
     v-on:input="updateValue($event.target.value)"
     v-on:focus="focus()"
     v-on:blur="blur()"></input>
@@ -25,15 +25,22 @@ export default {
   },
   data: function () {
     return {
-      isFocus: false
+      isFocus: false,
+      isAdding: false
     }
   },
   methods: {
     updateValue: function(value) {
       this.$emit('input', value);
     },
-    addTask: function(){
+    addTask: function() {
       this.$emit('addtask');
+      this.isAdding = false;
+    },
+    emitAdd: function() {
+      this.isFocus = false;
+      this.isAdding = true;
+      setTimeout(this.addTask, 1000)
     },
     focus: function() {
       this.isFocus = true;

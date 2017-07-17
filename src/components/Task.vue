@@ -10,7 +10,6 @@
       </label>
     </div>
     <span>{{task.title}}</span>
-    <icon name="remove_circle" class="Task__RemoveIcon" :scale="100"></icon>
   </li>
 </template>
 

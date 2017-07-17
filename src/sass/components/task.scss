@@ -3,8 +3,8 @@
     z-index: 3;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     padding: 10px;
+    background: #fff;
     &__Check {
         width: 30px;
     }
@@ -33,10 +33,6 @@
                 }
             }
         }
-    }
-    &__RemoveIcon {
-        opacity: 0;
-        transition: all .2 ease;
     }
     &__Label {
         position: relative;
