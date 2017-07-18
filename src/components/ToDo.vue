@@ -1,7 +1,7 @@
 <template>
   <div class="ToDo">
-    <new-task v-model="newtask" v-on:addtask="createNewTask()" v-on:focus="newtaskfocus = $event"></new-task>
-    <ul class="List" v-bind:class="{'List--Focus': newtaskfocus}">
+    <new-task v-model="newtask" v-on:addtask="createNewTask()" v-on:focus="newtaskfocus = $event" v-on:adding="addingTask = $event"></new-task>
+    <ul class="List" v-bind:class="{'List--Focus': newtaskfocus, 'List--Adding': addingTask}">
       <task v-for="(task, index) in tasks" :task="task" :index="index"></task>
     </ul>
   </div>
@@ -21,6 +21,7 @@ export default {
     return {
       newtask: '',
       newtaskfocus: false,
+      addingTask: false,
       tasks: [
         { title: 'Learn Javascript', complete: false, editing: false },
         { title: 'Do something else', complete: false, editing: false }

@@ -10,10 +10,12 @@
 }
 
 .List {
-    transition: all .1s ease-in;    
 
     &--Focus {
-        transform: translateY(30px);
+        transform: translateY(20px);
         transition: all .2s ease-in-out;
+    }
+    &--Adding {
+        transform: translateY(40px);
     }
 }

@@ -28,19 +28,15 @@
     &--Focus {
         width: 105%;
         margin-left: -2.5%;
-        transform: translateY(10px);
         transition: all .3s ease;
-        
-        + .NewTask__Input {
-            background: blue;
-        }
     }
     &--Adding {
-        z-index: 100;
-        padding: 0;
-        border-radius: 0;
-        opacity: 0.5;
-        transform: translateY(70px);
+        // z-index: 100;
+        // padding: 0;
+        // border-radius: 0;
+        // opacity: 0.5;
+        // transform: translateY(70px);
+        animation: addAnimation 1s backwards;
         input {
             width: 100%;
             transition: all .3s ease;
@@ -49,5 +45,30 @@
             display: none;
         }
         transition: all .3s ease;
+    }
+}
+@keyframes addAnimation {
+    0% {
+        width: 105%;
+        margin-left: -2.5%;
+    }
+    10% {
+        width: 100%;
+        margin-left: 0;
+    }
+    30% {
+        padding: 0;
+        border-radius: 0;
+        transform: translateY(40px);
+    }
+    70% {
+        padding: 0;
+        border-radius: 0;
+        transform: translateY(40px);
+    }
+    71% {
+        padding: 0;
+        border-radius: 0;
+        transform: translateY(40px);
     }
 }
