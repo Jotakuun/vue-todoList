@@ -1,9 +1,11 @@
 <template>
   <div class="ToDo">
     <new-task v-model="newtask" v-on:addtask="createNewTask()" v-on:focus="newtaskfocus = $event" v-on:adding="addingTask = $event"></new-task>
-    <ul class="List" v-bind:class="{'List--Focus': newtaskfocus, 'List--Adding': addingTask}">
+    <div class="TasksList__Container">
+      <ul class="TaskList" v-bind:class="{'TasksList--Focus': newtaskfocus, 'TasksList--Adding': addingTask}">
       <task v-for="(task, index) in tasks" :task="task" :index="index"></task>
     </ul>
+    </div>
   </div>
 </template>
 

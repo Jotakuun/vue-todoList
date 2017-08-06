@@ -8,7 +8,8 @@
     padding: 5px 0;  
     background: #fff;
     border-radius: 3px;
-    transition: all .1s ease-in-out;  
+    transition: all .1s ease-in-out;
+    z-index: -5;
     &__Input {
         @include font();
         flex: 1;
@@ -31,11 +32,6 @@
         transition: all .3s ease;
     }
     &--Adding {
-        // z-index: 100;
-        // padding: 0;
-        // border-radius: 0;
-        // opacity: 0.5;
-        // transform: translateY(70px);
         animation: addAnimation 1s backwards;
         input {
             width: 100%;
@@ -44,7 +40,7 @@
         .NewTask__Label {
             display: none;
         }
-        transition: all .3s ease;
+        transition: all .4s ease;
     }
 }
 @keyframes addAnimation {
