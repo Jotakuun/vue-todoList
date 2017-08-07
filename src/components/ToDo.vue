@@ -24,15 +24,23 @@ export default {
       newtask: '',
       newtaskfocus: false,
       addingTask: false,
+      nextId: 2,
       tasks: [
-        { title: 'Learn Javascript', complete: false, editing: false },
-        { title: 'Do something else', complete: false, editing: false }
+        { id: 1, title: 'Learn Javascript', completed: false, editing: false },
+        { id: 0, title: 'Do something else', completed: false, editing: false }
       ]
     }
   },
   methods: {
     createNewTask: function() {
-      this.tasks.unshift({title: this.newtask, complete: false, editing: false});
+      this.tasks.unshift(
+        { id: this.nextId, 
+          title: this.newtask,
+          completed: false,
+          editing: false
+        }
+      );
+      this.nextId++;
       this.newtask = '';      
     }
   }

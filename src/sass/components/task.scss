@@ -16,11 +16,21 @@
     }
     span {
         margin-top: 4px;
+        &:after {
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #a0a0a0;
+            content: '';
+            transform: translateY(-8px);
+            transition: .1s all ease-in-out;
+        }
     }
 
     &__Checkbox {
         display: none;
         opacity: 0;
+        
         &:checked {
             +.Task__Label {
                 svg {
@@ -65,6 +75,21 @@
                 stroke-linejoin: round;
                 stroke-dasharray: 18px;
                 stroke-dashoffset: 18px;
+            }
+        }
+    }
+    &--Done {
+        span {
+            color: #727272;
+            transition: .2s all ease-in;
+            &:after {
+                display: block;
+                width: 108%;
+                height: 2px;
+                background: #a0a0a0;
+                content: '';
+                transform: translateY(-8px);
+                transition: .1s all ease-in;
             }
         }
     }

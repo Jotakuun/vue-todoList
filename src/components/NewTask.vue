@@ -37,17 +37,14 @@ export default {
       this.$emit('addtask');
       this.$emit('adding', false)
       document.getElementById("NewTask").blur();
-      setTimeout(this.emit, 750)      
+      setTimeout(this.isAdding = false, 750)      
     },
     emitAdd: function() {
       this.isFocus = false;
+      document.getElementById("NewTask").blur();
       this.isAdding = true;
       this.$emit('adding', true);
       setTimeout(this.addTask, 750)
-    },
-    emit: function() {
-      this.isAdding = false;
-      
     },
     focus: function() {
       this.isFocus = true;
