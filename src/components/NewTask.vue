@@ -7,6 +7,8 @@
     v-on:focus="focus()"
     v-on:blur="blur()"></input>
     <label for="NewTask" class="NewTask__Label">{{placeholder}}</label>
+    <div class="NewTask__Box">
+    </div>
   </div>
 </template>
 
