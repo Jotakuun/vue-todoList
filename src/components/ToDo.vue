@@ -33,13 +33,15 @@ export default {
   },
   methods: {
     createNewTask: function() {
+      let newTaskString = this.newtask.length > 24 ? this.newtask.substring(0,24) + '...': this.newtask;
       this.tasks.unshift(
         { id: this.nextId, 
-          title: this.newtask,
+          title: newTaskString,
           completed: false,
           editing: false
         }
       );
+      this.tasks.filter((a) => a);
       this.nextId++;
       this.newtask = '';      
     }
