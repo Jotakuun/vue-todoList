@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 $main-color: #1bb0f4;
 body {
+    overflow: hidden;
     background: $main-color;
 }
 #app {
