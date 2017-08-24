@@ -3,7 +3,7 @@
     <new-task v-model="newtask" v-on:addtask="createNewTask()" v-on:focus="newtaskfocus = $event" v-on:adding="addingTask = $event"></new-task>
     <div class="TasksList__Container">
       <ul class="TaskList" v-bind:class="{'TasksList--Focus': newtaskfocus, 'TasksList--Adding': addingTask}">
-      <task v-for="(task, index) in tasks" :task="task" :index="index"></task>
+      <task v-for="(task, index) in tasks" :task="task" :index="index" v-on:remove="removeTask($event)"></task>
     </ul>
     </div>
   </div>
@@ -76,6 +76,9 @@ export default {
       );
       this.tasks.filter((a) => a);
       this.newtask = '';      
+    },
+    removeTask: function(taskId) {
+      // to do
     }
   }
 }

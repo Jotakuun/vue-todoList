@@ -15,7 +15,9 @@
         }
     }
     span {
+        flex: 1;
         margin-top: 4px;
+        text-align: left;
         &:after {
             display: block;
             width: 0;
@@ -80,17 +82,24 @@
     }
     &--Done {
         span {
-            color: #727272;
+            color: #a2a2a2;
             transition: .2s all ease-in;
-            &:after {
-                display: block;
-                width: 108%;
-                height: 2px;
-                background: #a0a0a0;
-                content: '';
-                transform: translateY(-8px);
-                transition: .1s all ease-in;
+        }
+    }
+    &__RemoveIcon {
+        align-self: flex-end;    
+        width: 15px;
+        cursor: pointer;
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+            transition: .2s all ease;
+            svg {
+                fill: #cf474f;
             }
+        }
+        svg {
+            fill: #cacaca;
         }
     }
 }
