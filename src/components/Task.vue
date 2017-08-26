@@ -1,5 +1,5 @@
 <template>
-  <li class="Task" v-bind:class="{'Task--Done': task.completed, 'Task--Removing': task.isRemoving}">
+  <li class="Task" v-bind:class="{'Task--Done': task.completed, 'Task--Removing': isRemoving}">
     <div class="Task__Check">
       <input :id="'Task'+task.id" type="checkbox" class="Task__Checkbox" v-model="task.completed"></input>
       <label :for="'Task'+task.id" class="Task__Label">
@@ -33,7 +33,7 @@ export default {
   methods: {
     emitRemove: function() {
       this.isRemoving = true;
-      setTimeout(this.remove, 750);
+      setTimeout(this.remove, 1000);
     },
     remove: function() {
       this.isRemoving = false;

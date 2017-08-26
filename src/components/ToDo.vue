@@ -3,7 +3,10 @@
     <new-task v-model="newtask" v-on:addtask="createNewTask()" v-on:focus="newtaskfocus = $event" v-on:adding="addingTask = $event"></new-task>
     <div class="TasksList__Container">
       <ul class="TaskList" v-bind:class="{'TasksList--Focus': newtaskfocus, 'TasksList--Adding': addingTask}">
-      <task v-for="(task, index) in tasks" :task="task" :index="index" v-on:remove="removeTask($event)"></task>
+      <task v-for="(task, index) in tasks" 
+      :task="task" :index="index"
+       v-on:remove="removeTask($event)"
+       :key="task.id"></task>
     </ul>
     </div>
   </div>
@@ -18,9 +21,6 @@ var todoStorage = {
   fetch: function () {
     var tasks = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
     if (tasks.length > 0) {
-    tasks.forEach(function (todo, index) {
-      todo.id = index
-    })
     todoStorage.uid = tasks.length
     return tasks
   }
@@ -53,7 +53,11 @@ export default {
   computed:{
     nextId: function() {
       let tasks = this.tasks.map((task) => task);
-      return tasks.sort((a,b) => a.id < b.id)[0].id + 1;
+      if (this.tasks.length > 0) {
+        return tasks.sort((a,b) => a.id < b.id)[0].id + 1;
+      } else {
+        return 0;
+      }
     }
   },
   watch: {
@@ -67,18 +71,18 @@ export default {
   methods: {
     createNewTask: function() {
       let newTaskString = this.newtask.length > 24 ? this.newtask.substring(0,24) + '...': this.newtask;    
-      this.tasks.unshift(
+      this.tasks.push(
         { id: this.nextId, 
           title: newTaskString,
           completed: false,
           editing: false
         }
       );
-      this.tasks.filter((a) => a);
+      this.tasks = this.tasks.sort((a, b) => a.id < b.id);
       this.newtask = '';      
     },
     removeTask: function(taskId) {
-      // to do
+      this.tasks = this.tasks.filter((task) => task.id !== taskId)
     }
   }
 }

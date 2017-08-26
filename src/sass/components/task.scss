@@ -4,6 +4,7 @@
     display: flex;
     flex-flow: row nowrap;
     padding: 10px;
+    overflow: hidden;
     background: #fff;
     &__Check {
         width: 30px;
@@ -101,5 +102,11 @@
         svg {
             fill: #cacaca;
         }
+    }
+    &--Removing {
+        height: 0;
+        padding: 0 10px;
+        // opacity: 0;
+        transition: .2s all ease-in-out;
     }
 }
