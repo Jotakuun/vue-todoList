@@ -1,5 +1,5 @@
 # vue-todoList
-
+![Demo gif](http://imgur.com/a/mgpFq)
 ## Build Setup
 
 ``` bash
